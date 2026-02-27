@@ -1,0 +1,19 @@
+<form [formGroup]="appForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label class="form-label">{{question}}</label>
+    <input type="text" class="form-control" formControlName="answer">
+  </div>
+
+  <button type="submit" class="btn btn-success">Tell Me</button>
+</form>
+
+<br />
+
+<label *ngIf="answer !== 'unknown'">
+  Your name is {{answer}}
+</label>
+
+<app-info
+  *ngIf="answer !== 'unknown'"
+  [name]="answer">
+</app-info>

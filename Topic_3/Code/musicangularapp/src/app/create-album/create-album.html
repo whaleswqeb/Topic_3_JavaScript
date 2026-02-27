@@ -1,0 +1,71 @@
+<div class="container mt-4">
+
+  <div class="card shadow p-4">
+
+    <h3 class="mb-3">Create New Album</h3>
+
+    <form (ngSubmit)="save()">
+
+      <div class="mb-3">
+        <label class="form-label">Title *</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="album.title"
+          name="title"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Artist *</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="album.artist"
+          name="artist"
+          required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Year</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="album.year"
+          name="year">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea
+          class="form-control"
+          [(ngModel)]="album.description"
+          name="description">
+        </textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="album.image"
+          name="image">
+      </div>
+
+      <button type="submit" class="btn btn-success">
+        Save Album
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-secondary ms-2"
+        routerLink="/list-artists">
+        Cancel
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

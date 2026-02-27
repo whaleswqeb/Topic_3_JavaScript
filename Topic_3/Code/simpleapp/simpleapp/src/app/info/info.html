@@ -1,0 +1,44 @@
+<br />
+<h3>Welcome {{name}}, please place your Order</h3>
+<br />
+
+<form (ngSubmit)="onSubmit()" #infoForm="ngForm">
+
+  <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input type="number"
+           class="form-control"
+           required
+           min="1"
+           [(ngModel)]="quantity"
+           name="quantity">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Star Wars Movies</label>
+    <select class="form-select"
+            required
+            [(ngModel)]="selectedProduct"
+            name="products">
+
+      <option *ngFor="let product of products"
+              [value]="product">
+        {{product}}
+      </option>
+
+    </select>
+  </div>
+
+  <button type="submit"
+          class="btn btn-success"
+          [disabled]="!infoForm.valid">
+    Buy
+  </button>
+
+  <button type="button"
+          class="btn btn-secondary ms-2"
+          (click)="newInfo(infoForm)">
+    Reset
+  </button>
+
+</form>

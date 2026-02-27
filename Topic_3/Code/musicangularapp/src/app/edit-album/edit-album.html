@@ -1,0 +1,38 @@
+<div class="container mt-4">
+
+  <div class="card shadow p-4">
+
+    <h3>Edit Album</h3>
+
+    <form (ngSubmit)="update()">
+
+      <input class="form-control mb-2"
+             [(ngModel)]="album.title"
+             name="title">
+
+      <input class="form-control mb-2"
+             [(ngModel)]="album.artist"
+             name="artist">
+
+      <input class="form-control mb-2"
+             [(ngModel)]="album.year"
+             name="year">
+
+      <textarea class="form-control mb-2"
+                [(ngModel)]="album.description"
+                name="description">
+      </textarea>
+
+      <input class="form-control mb-3"
+             [(ngModel)]="album.image"
+             name="image">
+
+      <button class="btn btn-warning">
+        Update Album
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

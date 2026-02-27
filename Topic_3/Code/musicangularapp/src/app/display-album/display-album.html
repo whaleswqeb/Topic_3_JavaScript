@@ -1,0 +1,19 @@
+<div class="mt-4" *ngIf="album">
+  <div class="card shadow">
+    <div class="card-body">
+      <h4>{{ album.title }}</h4>
+
+      <p><strong>Artist:</strong> {{ album.artist }}</p>
+      <p><strong>Year:</strong> {{ album.year }}</p>
+      <p><strong>Description:</strong> {{ album.description }}</p>
+
+      <h6 class="mt-3">Tracks</h6>
+
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let track of album.tracks">
+          {{ track.number }} - {{ track.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

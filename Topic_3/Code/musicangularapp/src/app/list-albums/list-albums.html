@@ -1,0 +1,33 @@
+<div class="mt-4">
+  <h4>Albums of {{ artistName }}</h4>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let album of albums">
+      <div class="card shadow h-100">
+        <img [src]="album.image" class="card-img-top" style="height: 250px; object-fit: cover" />
+
+        <div class="card-body">
+          <h5>{{ album.title }}</h5>
+
+          <p><strong>Year:</strong> {{ album.year }}</p>
+
+          <button class="btn btn-sm btn-primary me-2" (click)="onSelectAlbum(album)">View</button>
+
+          <a
+            class="btn btn-sm btn-warning me-2"
+            [routerLink]="['/edit', album.artist, album.albumId]"
+          >
+            Edit
+          </a>
+
+          <a class="btn btn-sm btn-danger" [routerLink]="['/delete', album.artist, album.albumId]">
+            Delete
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Proper DisplayAlbum Component Usage -->
+  <app-display-album *ngIf="selectedAlbum" [album]="selectedAlbum"> </app-display-album>
+</div>
